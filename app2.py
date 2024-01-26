@@ -56,9 +56,9 @@ def predict_sentiment(text):
 
     # Adjust this based on your specific model and preprocessing steps
     if sentiment == 0:
-        return 'Negative'
-    elif sentiment == 1:
         return 'Neutral'
+    elif sentiment == 1:
+        return 'Negative'
     else:
         return 'Positive'
 
