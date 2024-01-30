@@ -8,7 +8,7 @@ model = joblib.load('best_model.pkl')
 vectorizer = joblib.load('vectorizer.pkl')
 
 # Streamlit app
-banner_image_url = 'https://github.com/LNJAMBI001/Streamlit2/blob/main/header.jpg'  
+banner_image_url = 'https://github.com/LNJAMBI001/Streamlit2/blob/main/header.jpg?raw=true'  
 st.image(banner_image_url, use_column_width=True)
 st.markdown(
     """
