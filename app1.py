@@ -34,15 +34,21 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+# Product options
+products = ['Tusker', 'Guinness', 'Gilbeys', 'Captain Morgan', 'Chrome', 'Marketing campaign']
 
 def main():
     st.title('EABL Sentiment Analysis App')
-    text = st.text_area('Enter your sentiment:', '')
+    
+    # Dropdown to select product
+    selected_product = st.selectbox('Select a product:', products)
+    
+    text = st.text_area('Enter your sentiment about {}:'.format(selected_product), '')
 
     if st.button('Analyze', key="analyze-button"):
         sentiment = predict_sentiment(text)
-        st.write('Sentiment:', sentiment)
-
+        st.write('Sentiment about {}:'.format(selected_product), sentiment)
+        st.write('Your sentiment matters, thank you')
 
 def predict_sentiment(text):
     # Preprocess the input text using the loaded vectorizer
@@ -56,7 +62,6 @@ def predict_sentiment(text):
 
     # Adjust this based on your specific model and preprocessing steps
     return 'Negative' if sentiment == 1 else 'Positive'
-st.write('Your sentiment matters, thank you')
 
 if __name__ == '__main__':
     main()
